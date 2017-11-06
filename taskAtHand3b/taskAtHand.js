@@ -3,14 +3,14 @@
 // using a function contructor form to create an object
 function TaskAtHandApp()
 {
-	var version = "v3.1";
-	var appStorage = new AppStorage("taskAtHand");
-	taskList = new TaskList();
+	var version = "v3.2",
+	appStorage = new AppStorage("taskAtHand"),
+	taskList = new TaskList(),
 	timoutId = 0;
 	
 
 	// creating a private function
-	function setStatus(message)
+	function setStatus(message, noFade)
 	{
 		$("#app>footer").text(message).show();
 		if (!noFade)
@@ -160,7 +160,7 @@ function TaskAtHandApp()
 		$("#theme-style").attr("href", "themes/" + theme + ".css");
 	}
 	
-	function loadThem()
+	function loadTheme()
 	{
 		var theme = appStorage.getValue("theme");
 		if (theme)
@@ -171,6 +171,19 @@ function TaskAtHandApp()
 		}
 	}
 	
+	function saveTaskList()
+	{		
+		if (timeoutId) clearTimeout(timeoutId);
+		setStatus("saving changes...", true);
+		timeoutId = setTimeout(function()
+		{
+			appStorage.setValue("taskList", taskList.getTasks());
+			timeoutId = 0;
+			setStatus("changes saved.");
+		},
+		2000);
+		
+	}
 
 	function loadTaskList()
 	{
@@ -195,19 +208,7 @@ function TaskAtHandApp()
 		 });
 	}
 
-	function saveTaskList()
-	{		
-		if (timeoutId) clearTimout(timeoutId);
-		setStatus("saving changes...", true);
-		timeoutId = setTimeout(function()
-		{
-			appStorage.setValue("taskList", taskList.getTasks());
-			timoutId = 0;
-			setStatus("changes saved.");
-		},
-		2000);
-		
-	}
+	
 
 	// creating a public function
 	this.start = function()
