@@ -6,7 +6,7 @@ function TaskAtHandApp()
 	var version = "v3.2",
 	appStorage = new AppStorage("taskAtHand"),
 	taskList = new TaskList(),
-	timoutId = 0;
+	timeoutId = 0;
 	
 
 	// creating a private function
@@ -172,16 +172,16 @@ function TaskAtHandApp()
 	}
 	
 	function saveTaskList()
-	{		
-		if (timeoutId) clearTimeout(timeoutId);
-		setStatus("saving changes...", true);
-		timeoutId = setTimeout(function()
-		{
-			appStorage.setValue("taskList", taskList.getTasks());
-			timeoutId = 0;
-			setStatus("changes saved.");
-		},
-		2000);
+	{
+	 if (timeoutId) clearTimeout(timeoutId);
+	 setStatus("saving changes...", true);
+	 timeoutId = setTimeout(function()
+		 {
+		 appStorage.setValue("taskList", taskList.getTasks());
+		 timeoutId = 0;
+		 setStatus("changes saved.");
+		 },
+	 2000);
 		
 	}
 
