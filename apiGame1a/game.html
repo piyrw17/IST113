@@ -9,20 +9,38 @@
 	<body>
 		<div id="game">
 			<header>Game of War</header>
+			<div id="warButton">
+				<button onclick="war(this)" id="shuffle" type="button">War!</button>
+			</div>
 			<div id="main">
 				<div id="p1">
-					<button id="player1" type="button">Player 1 Draw</button>
-					 <input type="text" name="Card" value="">
+					<button onclick="p1Draw(this)" id="player1" type="button">Player 1 Draw</button>
+					 <input id="C1" type="text" name="Card" value="">
+					 
 				</div>
 				<div id="p2">	
-					<button id="player2" type="button">Player 2 Draw</button>
-					<input type="text" name="Card" value="">
+					<button onclick="p2Draw(this)" id="player2" type="button">Player 2 Draw</button>
+					<input id ="C2" type="text" name="Card" value="">
+					
 				</div>	
 				
-					<button onclick="newGame(this)" id="shuffle" type="button">Shuffle Deck</button>
+					<button onclick="newGame(this)" id="shuffle" type="button">New Game</button>
+					<input id ="CiD" type="text" name="Card" value="">
 
 			</div>
+			
 			<footer></footer>
+			
 		</div>
+			<div id="playerPic1">
+				<p> Player 1</p>
+				<img id ="pic1" src="">
+						 
+			</div>
+			<div id="playerPic2">
+				
+				<img id="pic2" src="">
+				<p> Player 2</p>	
+			</div>
 	</body>
 </html>

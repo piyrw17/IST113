@@ -1,40 +1,93 @@
 
 var id;
+var Card1;
+var Card2;
 
 function newGame(){
 
 	$.ajax({
-				url: "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1",
+				//url: "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1", If a new Deck ID is needed
+				url: "https://deckofcardsapi.com/api/deck/b2fp2k3q5jrf/shuffle/",
 				dataType : "json",
 				data: { 
 				a: "deck_id"
-				},
-				success: function(data) {
-					console.log('success', data)
-					var id = data.deck_id
-					console.log(id)
-					alert("Deck Shuffled")},
-				error: function(xhr) {
-					console.log('error', xhr);
-				}
+					},
+						success: function(data) {
+							console.log('success', data)
+							var id = data.deck_id
+							console.log(id)
+							document.getElementById('CiD').value= data.remaining + " Cards in Deck";
+							alert("Deck Shuffled")},
+							
+						error: function(xhr) {
+							console.log('error', xhr);
+					}
 	})
 }
 
 function p1Draw(){
-	/*url: "https://deckofcardsapi.com/api/deck/deck_id/draw/?count=2",
+	
+	$.ajax({
+				url: "https://deckofcardsapi.com/api/deck/b2fp2k3q5jrf/draw/?count=1",
 				dataType : "json",
 				data: { 
-				a: "value","suit"
-				},
-				success: function(data) {
-					console.log('success', data)					
-					console.log(id)
-					alert("Deck Shuffled")},
-				error: function(xhr) {
-					console.log('error', xhr);
-				}*/	
-}
+				a: "value"
+					},
+						success: function(data) {
+							console.log('success', data)
+							Card1 = Number(data.cards["0"].value)	
+							console.log(data.cards["0"])
+							console.log(Card1)							
+							document.getElementById('C1').value= data.cards["0"].value + " of " + data.cards["0"].suit;
+							document.getElementById('pic1').src = data.cards["0"].image;
+							document.getElementById('CiD').value= data.remaining + " Cards in Deck";
+							/*alert("Player 1 drew a card")*/},
+						error: function(xhr) {
+							console.log('error', xhr);
+					}	
+	})
+	
 
+}
 function p2Draw(){
 	
+	$.ajax({
+				url: "https://deckofcardsapi.com/api/deck/b2fp2k3q5jrf/draw/?count=1",
+				dataType : "json",
+				data: { 
+				a: "value"
+					},
+						success: function(data) {
+							console.log('success', data)
+							Card2 = Number(data.cards["0"].value)	
+							console.log(data.cards["0"])
+							console.log(Card2)							
+							document.getElementById('C2').value= data.cards["0"].value + " of " + data.cards["0"].suit;
+							document.getElementById('pic2').src = data.cards["0"].image;
+							document.getElementById('CiD').value= data.remaining + " Cards in Deck";							
+							/*alert("Player 2 drew a card")*/},
+							error: function(xhr) {
+							console.log('error', xhr);
+							
+					}	
+					
+	})
+
+	
+	
+}
+
+function war(){
+	var score1 = 0;
+	var score2 = 0;
+		if(Card1 > Card2){
+			alert("Player 1 Wins the Hand!");
+			++score1;
+			console.log("Player 1s Points: " + score1);
+		}
+		else if(Card1 < Card2){
+			alert("Player 2 Wins the Hand");
+			++score2;
+			console.log("Player 2s Points: " + score2);
+		}
 }
