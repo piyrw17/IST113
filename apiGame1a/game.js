@@ -77,7 +77,23 @@ function p2Draw(){
 					},
 						success: function(data) {
 							console.log('success', data)
-							Card2 = Number(data.cards["0"].value)	
+							Card2 = (data.cards["0"].value)
+								switch(Card1) {
+								case "KING":
+									Card2 = 13;
+									break;
+								case "QUEEN":
+									Card2 = 12;
+									break;
+								case "JACK":
+									Card2 = 11;
+									break;
+								case "ACE":
+									Card2 = 14;
+									break;
+								default:
+									Card2 = Number(data.cards["0"].value)
+												}	
 							console.log(data.cards["0"])
 							console.log(Card2)							
 							document.getElementById('C2').value= data.cards["0"].value + " of " + data.cards["0"].suit;
