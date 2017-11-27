@@ -78,7 +78,7 @@ function p2Draw(){
 						success: function(data) {
 							console.log('success', data)
 							Card2 = (data.cards["0"].value)
-								switch(Card1) {
+								switch(Card2) {
 								case "KING":
 									Card2 = 13;
 									break;
