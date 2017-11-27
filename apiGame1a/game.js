@@ -20,9 +20,9 @@ function newGame(){
 							console.log(id)
 							document.getElementById('CiD').value= data.remaining + " Cards in Deck";
 							document.getElementById('C1').value= "";
-							document.getElementById('pic1').src = ;
+							document.getElementById('pic1').src = "";
 							document.getElementById('C2').value= "";
-							document.getElementById('pic2').src = ;
+							document.getElementById('pic2').src = "";
 							alert("Deck Shuffled")},
 							
 						error: function(xhr) {
