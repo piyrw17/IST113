@@ -2,6 +2,8 @@
 var id;
 var Card1;
 var Card2;
+var score1 = 0;
+var score2 = 0;
 
 function newGame(){
 
@@ -35,7 +37,23 @@ function p1Draw(){
 					},
 						success: function(data) {
 							console.log('success', data)
-							Card1 = Number(data.cards["0"].value)	
+							Card1 = (data.cards["0"].value)
+								switch(Card1) {
+								case "KING":
+									Card1 = 13;
+									break;
+								case "QUEEN":
+									Card1 = 12;
+									break;
+								case "JACK":
+									Card1 = 11;
+									break;
+								case "ACE":
+									Card1 = 14;
+									break;
+								default:
+									Card1 = Number(data.cards["0"].value)
+												}
 							console.log(data.cards["0"])
 							console.log(Card1)							
 							document.getElementById('C1').value= data.cards["0"].value + " of " + data.cards["0"].suit;
@@ -78,8 +96,7 @@ function p2Draw(){
 }
 
 function war(){
-	var score1 = 0;
-	var score2 = 0;
+	
 		if(Card1 > Card2){
 			alert("Player 1 Wins the Hand!");
 			++score1;
