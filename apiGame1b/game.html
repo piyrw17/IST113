@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>War</title>
+		<link href="game.css" rel="StyleSheet" />
+		<link href="game.css3" rel="StyleSheet" />		
+		<script src="game.js"></script>
+		<script src="lib/jquery-3.2.1.min.js"></script>
+	</head>
+	<body background="game.jpg">
+		<div id="game">
+			<header>Game of War</header>
+			<div id="warButton">
+				<button onclick="war(this)" id="shuffle" type="button">War!</button>
+			</div>
+			<div id="main">
+				
+				
+					<button onclick="newGame(this)" id="shuffle" type="button">New Game</button>
+					<input id ="CiD" type="text" name="Card" value="">
+					
+					<div id="p1">
+					<button onclick="p1Draw(this)" id="player1" type="button">Player 1 Draw</button>
+					<input id="C1" type="text" name="Card" value="">
+					 
+				</div>
+				
+					<div id="p2">	
+						<button onclick="p2Draw(this)" id="player2" type="button">Player 2 Draw</button>
+						<input id ="C2" type="text" name="Card" value="">						
+					</div>						
+				</div>	
+				
+			<footer></footer>			
+		</div>	
+				<div id="graphics">
+						<img id="draw" src="" height="50%" width="50%"></img>
+				</div>		
+			<div id="playerPic1">
+				<p> Player 1</p>				
+				<img id ="pic1" src="">						 
+			</div>
+			<div id="playerPic2">
+				
+				<img id="pic2" src="">
+				<p> Player 2</p>							
+			</div>
+	</body>
+</html>

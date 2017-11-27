@@ -1,0 +1,58 @@
+#game{
+	font-size: 300%;
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header{
+	color: red;
+}
+#warButton{
+	font-size: 200%;
+	position: absolute;
+    top: 50px;
+    right: 350px;
+    width: 200px;
+    height: 100px;
+}
+
+#playerPic1{
+	font-size: 200%;
+	position: absolute;
+    top: 0px;
+    right: 300px;
+    width: 200px;
+    height: 100px;
+    
+}
+
+#playerPic2{
+	font-size: 200%;
+	position: absolute;
+    top: 500px;
+    right: 300px;
+    width: 200px;
+    height: 100px;
+   
+}
+
+#draw{
+	display: none;
+}
+
+#graphics{
+	height: 50%;
+	width: 50%;
+	
+}
+
+#playerPic1{
+	color: red;
+}
+
+#playerPic2{
+	color: red;
+}
