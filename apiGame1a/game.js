@@ -127,4 +127,7 @@ function war(){
 			++score2;
 			console.log("Player 2s Points: " + score2);
 		}
+		else if(Card1 == Card2){
+			alert("War!");
+		}
 }
