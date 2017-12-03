@@ -3,7 +3,7 @@
 	margin: 0;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 40%;
     transform: translate(-50%, -50%);
 }
 
@@ -20,22 +20,25 @@ header{
 }
 
 #playerPic1{
-	font-size: 200%;
+	font-size: 175%;
 	position: absolute;
     top: 0px;
     right: 300px;
     width: 200px;
     height: 100px;
+	float: right;
     
 }
 
 #playerPic2{
-	font-size: 200%;
+	font-size: 175%;
 	position: absolute;
-    top: 500px;
+    top: 400px;
     right: 300px;
     width: 200px;
     height: 100px;
+	bottom: 0;
+	float: right;
    
 }
 
@@ -55,4 +58,14 @@ header{
 
 #playerPic2{
 	color: red;
+}
+
+#p2P{
+	
+}
+
+#war1C #war2C{
+	float: left;
+	width: 20%;
+	height: auto;
 }
