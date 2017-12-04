@@ -19,27 +19,34 @@ header{
     height: 100px;
 }
 
+#w1#w2{
+	float: left;
+}
+
 #playerPic1{
 	font-size: 175%;
 	position: absolute;
     top: 0px;
-    right: 600px;
-    width: 200px;
-    height: 100px;	
+    right: 400px;
+    width: 500px;
+    height: 200px;	
 	color: red;   
-	display: inline;
+	display: inline-block;
+	float: left;
+	clear: bottom;
 }
 
 #playerPic2{
 	font-size: 175%;
 	position: absolute;
     top: 500px;
-    right: 600px;
-    width: 200px;
-    height: 100px;
+    right: 400px;
+    width: 500px;
+    height: 200px;
 	bottom: 0;	
 	color: red;	
-	display: inline;
+	display: inline-block;
+	float: left;
    
 }
 
@@ -58,14 +65,8 @@ header{
 }
 
 #pic1 #pic2 {
-	float: left;
+	clear: left;
 	
 }
 
-#w1#w2{
-	
 
-#cardArea{
-	float: right;
-	
-}
