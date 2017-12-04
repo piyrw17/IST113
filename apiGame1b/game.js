@@ -7,9 +7,6 @@ var score2 = 0;
 var war1 = "";
 var war2 = "";
 
-
-//document.getElementById('w1').src = "game.jpg";
-//document.getElementById('w2').src = "game.jpg";
 function newGame(){
 
 	$.ajax({
@@ -31,9 +28,7 @@ function newGame(){
 							document.getElementById('draw').src = "shuffle.gif";
 							document.getElementById('draw').style.display = "block";
 							document.getElementById('p1P').innerHTML= "Player 1 Points: ";
-							document.getElementById('p2P').innerHTML= "Player 2 Points: ";
-document.getElementById('w1').src = "game.jpg";
-document.getElementById('w2').src = "game.jpg";							
+							document.getElementById('p2P').innerHTML= "Player 2 Points: ";							
 							Card1 = "";
 							Card2 = "";
 							setTimeout("hide()", 2750);},
@@ -284,6 +279,36 @@ function realWar()
 							}	
 							
 			})
+			
+			if(war1 > war2)
+			{
+				alert("Player 1 wins the War!");
+				++score1;
+			document.getElementById('p1P').innerHTML= "Player 1 Points: " + score1;
+			document.getElementById('pic1').src = "";
+			document.getElementById('pic2').src = "";
+			document.getElementById('C1').value= "";
+			document.getElementById('C2').value= "";
+			Card1 = "";
+			Card2 = "";
+			document.getElementById('w1').src = "";
+			document.getElementById('w2').src = "";
+			}
+			else
+			{
+				alert("Player 2 wins the War!");
+				++score2;
+			document.getElementById('p1P').innerHTML= "Player 1 Points: " + score1;
+			document.getElementById('pic1').src = "";
+			document.getElementById('pic2').src = "";
+			document.getElementById('C1').value= "";
+			document.getElementById('C2').value= "";
+			Card1 = "";
+			Card2 = "";
+			document.getElementById('w1').src = "";
+			document.getElementById('w2').src = "";			
+			}
 }			
+
 	
 

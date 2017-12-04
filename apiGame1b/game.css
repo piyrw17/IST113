@@ -23,22 +23,23 @@ header{
 	font-size: 175%;
 	position: absolute;
     top: 0px;
-    right: 300px;
+    right: 600px;
     width: 200px;
-    height: 100px;
-	float: right;
-    
+    height: 100px;	
+	color: red;   
+	display: inline;
 }
 
 #playerPic2{
 	font-size: 175%;
 	position: absolute;
-    top: 400px;
-    right: 300px;
+    top: 500px;
+    right: 600px;
     width: 200px;
     height: 100px;
-	bottom: 0;
-	float: right;
+	bottom: 0;	
+	color: red;	
+	display: inline;
    
 }
 
@@ -52,20 +53,19 @@ header{
 	
 }
 
-#playerPic1{
-	color: red;
-}
-
-#playerPic2{
-	color: red;
-}
-
 #p2P{
 	
 }
 
-#war1C #war2C{
+#pic1 #pic2 {
 	float: left;
-	width: 20%;
-	height: auto;
+	
+}
+
+#w1#w2{
+	
+
+#cardArea{
+	float: right;
+	
 }
